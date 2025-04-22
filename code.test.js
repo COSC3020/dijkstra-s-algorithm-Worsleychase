@@ -26,6 +26,24 @@ const test = jsc.forall("array (pair nat nat)", function(edges) {
         }
     }
 
+    // test non-connected nodes
+    for (let i = 0; i <= max; i++) {
+        if (distances[i] === Infinity) {
+            let reachable = false;
+            for (let j = 0; j <= max; j++) {
+                if (distances[j] !== Infinity) {
+                    for (let [v, weight] of graph[j]) {
+                        if (v == i) {
+                            reachable = true;
+                            break;
+                        }
+                    }
+                }
+                if (reachable) break;
+            }
+            if (reachable) return false;
+        }
+    }
     return true;
 });
 
