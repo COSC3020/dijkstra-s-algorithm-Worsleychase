@@ -8,8 +8,11 @@ class PriorityQueue {
     }
 
     enqueue(priority, value) {
-        this.elements.push({ priority, value });
-        this.elements.sort((a, b) => a.priority - b.priority);
+        let i = 0;
+        while (i < this.elements.length && this.elements[i].priority <= priority) {
+            i++;
+        }
+        this.elements.splice(i, 0, { priority, value });
     }
 
     dequeue() {
