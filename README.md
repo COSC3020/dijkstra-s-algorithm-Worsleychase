@@ -26,7 +26,7 @@ answer, including your reasoning, to this markdown file.
 
 # Solution
 
-First I initialize two arrays that are the size of the number of vertices (n), taking O(n). The enqueue method iterates over the elements and finds the correct index (according to its priority) to place the value, this means that it takes linear time, O(n). However, the total number of enqueue calls is O(m) where m is the number of edges. This means that our overall complexity is $\Theta(m \cdot n)$ which (assuming very large connected graph) simplifies to $\Theta(n^2)$.
+First I initialize two arrays that are the size of the number of vertices (n), taking O(n). The enqueue method iterates over the elements and finds the correct index (according to its priority) to place the value, this means that it takes linear time, O(n). However, the total number of enqueue calls is O(m) where m is the number of edges. This means that our overall complexity is $\Theta(n \cdot n \cdot m) = \Theta(n^2 \cdot m)$ which (assuming very large connected graph) simplifies to $\Theta(n^3)$.
 
 # Disclaimer
 
