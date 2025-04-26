@@ -23,3 +23,12 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+# Solution
+
+First I initialize two arrays that are the size of the number of vertices (n), taking O(n). The enqueue method iterates over the elements and finds the correct index (according to its priority) to place the value, this means that it takes linear time, O(n). However, the total number of enqueue calls is O(m) where m is the number of edges. This means that our overall complexity is $\Theta(n \cdot n \cdot m) = \Theta(n^2 \cdot m)$.
+# Disclaimer
+
+~~I didn't know what to assume the complexity of the sort() method was, so I used [this](https://stackoverflow.com/questions/57763205/what-is-array-prototype-sort-time-complexity), and am just assuming it has complexity O(n logn).~~(Not used anymore, here just in case)
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
